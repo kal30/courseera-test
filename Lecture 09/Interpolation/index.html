@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "MsgApp">
 
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dependency Injection in Javascript (and AngularJS)</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <title>Expressions and Interpolation</title>
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <style>body {font-size:1.3em; }</style>
 </head>
 
-<body ng-app="DIApp">
-    <h1>Dependancy Injection</h1>
-    <div ng-controller="DIController">
+<body>
+    <h1>Expressions and Interpolation</h1>
+    <div ng-controller="MsgController">
+        Message is : <br>
+        {{name}}
+        {{sayMessage()}}
         <div>
-            Your name:
-            <input type="text" ng-model="name" ng-blur="upper()">
+            <button ng-click="flipImage()">Click to flip</button>
+            <br>
+            <img ng-src="images/nature_{{stateOfBeing}}.jpg"
         </div>
+    </div>
 </body>
 
 </html>

@@ -2,21 +2,20 @@
 (function () {
     'use strict';
 
-    angular.module('DIApp', [])
-        .controller('DIController', DIController);
+    angular.module('MsgApp', [])
+        .controller('MsgController', MsgController);
 
-    DIController.$inject = ['$scope', '$filter'] //this helps when we minify
-    function DIController($scope, $filter) {
+    MsgController.$inject = ['$scope'] //this helps when we minify
+    function MsgController($scope) {
         $scope.name = "Kalyani";
-        
+        $scope.stateOfBeing = "flower";
+        $scope.sayMessage = function () {
+            return "Some message";
+        };
 
-        $scope.upper = function() {
-            var upCase = $filter('uppercase');
-            $scope.name = upCase($scope.name);
-        }
-
-   
-
+        $scope.flipImage = function () {
+            $scope.stateOfBeing = "mountain";
+        };
     }
 
 })();
