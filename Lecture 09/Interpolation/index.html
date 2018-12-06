@@ -13,12 +13,16 @@
     <h1>Expressions and Interpolation</h1>
     <div ng-controller="MsgController">
         Message is : <br>
-        {{name}}
-        {{sayMessage()}}
+        {{name}} <br>
+        Original message :{{sayMessage()}} <br>
+        Loves : {{sayLovesMessage() }} <br>
+        Truth : {{sayLovesMessage() | truth : 'healthy' : 'cookie'}} <br>
+        One more Truth : {{sayLovesMessage() | truth : 'healthy' : 'cookie' | uppercase}}
         <div>
-            <button ng-click="flipImage()">Click to flip</button>
+            <button ng-click="flipImage()">Click to flip</button> <br>
+            Cost : {{cookieCost | currency}}
             <br>
-            <img ng-src="images/nature_{{stateOfBeing}}.jpg"
+            <img ng-src="images/nature_{{stateOfBeing}}.jpg"/>
         </div>
     </div>
 </body>
